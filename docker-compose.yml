@@ -1,15 +1,16 @@
 services:
   db:
-    image: mysql:8.0
+    image: postgres:15
     environment:
-      MYSQL_DATABASE: ${DB_NAME:-bookcoin}
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-admin12345}
+      POSTGRES_DB: ${DB_NAME:-Bookcoin}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-qwerty12345}
+      POSTGRES_USER: ${DB_USER:-postgres}
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD:-admin12345}"]
+      test: ["CMD", "psql", "-h", "localhost", "-U", "postgres", "-p${DB_PASSWORD:-qwerty12345}", "-c", "SELECT 1"]
       interval: 10s
       timeout: 5s
       retries: 10

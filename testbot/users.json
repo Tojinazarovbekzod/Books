@@ -1,0 +1,13 @@
+{
+  "8185798165": {
+    "coin": 0,
+    "score": 0,
+    "q_index": 0,
+    "shuffled": [],
+    "current_question": null,
+    "current_options": [],
+    "user_answered": false,
+    "waiting_for_book": true,
+    "book_name": null
+  }
+}
