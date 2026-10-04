@@ -2,7 +2,7 @@ services:
   db:
     image: postgres:15
     environment:
-      POSTGRES_DB: ${DB_NAME:-Bookcoin}
+      POSTGRES_DB: ${DB_NAME:-BookCoin}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-qwerty12345}
       POSTGRES_USER: ${DB_USER:-postgres}
     ports:
